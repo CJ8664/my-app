@@ -16,7 +16,8 @@ script:
     - npm install
     - npm test
     - npm run build
-    - docker build --tag "$IMAGE_NAME" .
+    - docker build --tag erchiragjain92/node-test-app .
+    - docker run erchiragjain92/node-test-app
 
 after_script:
   - docker images
