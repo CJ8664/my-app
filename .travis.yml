@@ -16,17 +16,9 @@ script:
     - npm install
     - npm test
     - npm run build
-    - docker build --tag erchiragjain92/node-test-app .
-
-after_script:
-  - docker images
-
-before_deploy:
-  - echo "$REGISTRY_PASS" | docker login --username "$REGISTRY_USER" --password-stdin
-  - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
 
 deploy:
   provider: script
-  script: docker push "${IMAGE_NAME}:latest"
+  script: bash push_deploy.sh
   on:
     branch: master
