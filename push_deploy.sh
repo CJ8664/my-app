@@ -18,4 +18,4 @@ docker push registry.heroku.com/node-test-app-cj/web
 
 # Release new image
 heroku login
-heroku container:release web
+heroku container:release web -a node-test-app-cj
