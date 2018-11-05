@@ -1,3 +1,3 @@
 printf "********** Building Docker Image and pushing it ***********\n\n"
-./docker.sh
+. ./deployment/scripts/docker.sh
 printf "********** Done ***********\n\n"
