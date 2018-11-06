@@ -1,0 +1,5 @@
+- name: Pull lastest docker image
+  become: True
+  docker_image:
+    name: erchiragjain92/node-test-app
+    tag: latest
