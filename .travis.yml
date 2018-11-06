@@ -12,6 +12,10 @@ cache:
   directories:
     - "node_modules"
 
+install:
+  # Install Ansible.
+  - pip install ansible
+
 script:
     - npm install
     - npm test
