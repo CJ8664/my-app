@@ -12,9 +12,13 @@ cache:
   directories:
     - "node_modules"
 
+before_install:
+  # Make sure everything's up to date.
+  - sudo apt-get update -qq
+
 install:
   # Install Ansible.
-  - pip install ansible
+  - sudo pip install ansible
 
 script:
     - npm install
