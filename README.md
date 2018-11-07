@@ -1,1 +1,1 @@
-# Test App for CI/CD on Heroku [![Build Status](https://travis-ci.com/CJ8664/my-app.svg?branch=master)](https://travis-ci.com/CJ8664/my-app.svg?branch=master)
+# Test App for CI/CD on Heroku [![Build Status](https://api.travis-ci.org/CJ8664/my-app.svg?branch=master)](https://api.travis-ci.org/CJ8664/my-app.svg?branch=master)
