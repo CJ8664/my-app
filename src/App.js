@@ -11,7 +11,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          This is the beta page and has different content than master
+          Hello World, Beta page
         </p>
       </div>
     );

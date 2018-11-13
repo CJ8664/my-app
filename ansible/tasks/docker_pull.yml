@@ -2,8 +2,8 @@
   become: True
   docker_image:
     name: erchiragjain92/node-test-app
-    tag: latest
-  when: deploy_env == "latest"
+    tag: stable
+  when: deploy_env == "stable"
 
 - name: "Pull docker image for Beta"
   become: True
