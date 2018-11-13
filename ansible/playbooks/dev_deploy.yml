@@ -2,7 +2,7 @@
 - hosts: dev
   tasks:
     # - include: ../tasks/open_ports.yml
-    - include: ../tasks/setup_python.yml
+    # - include: ../tasks/setup_python.yml
     - include: ../tasks/stop_container.yml
     - include: ../tasks/docker_pull.yml
     - include: ../tasks/start_container.yml

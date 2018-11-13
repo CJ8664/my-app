@@ -1,9 +1,21 @@
-- name: Start the container
+- name: "Start the container for Production"
   become: True
   docker_container:
-    name: blue
-    image: erchiragjain92/node-test-app:latest
+    name: latest
+    image: "erchiragjain92/node-test-app:latest"
     ports:
       - 5000:5000
     state: started
+  when: deploy_env == "latest"
+  ignore_errors: True
+
+- name: "Start the container for Beta"
+  become: True
+  docker_container:
+    name: beta
+    image: "erchiragjain92/node-test-app:beta"
+    ports:
+      - 5001:5000
+    state: started
+  when: deploy_env == "beta"
   ignore_errors: True
