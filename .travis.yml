@@ -29,7 +29,7 @@ script:
 
 deploy:
   provider: script
-  script: bash deploy.sh latest
+  script: bash deploy.sh stable
   on:
     branch: master
 
