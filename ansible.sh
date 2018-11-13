@@ -2,7 +2,7 @@
 echo $ANSIBLE_VAULT_PASS > vault_pass_file
 
 # Run the ansible playbook
-if [ $DEPLOY_ENV = "latest"]
+if [ $DEPLOY_ENV = "latest" ]
 then
   # Production deploy
   ansible-playbook -i "${ANSIBLE_INVENTORY}" "${ANSIBLE_PLAYBOOK}" --vault-password-file vault_pass_file --extra-vars "deploy_env=latest"

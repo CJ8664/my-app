@@ -1,5 +1,13 @@
-- name: "Pull docker image for {{ deploy_env }}"
+- name: "Pull docker image for Production"
   become: True
   docker_image:
     name: erchiragjain92/node-test-app
-    tag: "{{ deploy_env }}"
+    tag: latest
+  when: deploy_env == "latest"
+
+- name: "Pull docker image for Beta"
+  become: True
+  docker_image:
+    name: erchiragjain92/node-test-app
+    tag: beta
+  when: deploy_env == "beta"
