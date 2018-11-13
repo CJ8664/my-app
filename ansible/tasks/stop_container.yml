@@ -1,6 +1,6 @@
-- name: Start the container
+- name: "Stop the container for {{ deploy_env }}"
   become: True
   docker_container:
-    name: "{{ build_env }}"
+    name: "{{ deploy_env }}"
     state: stopped
   ignore_errors: True

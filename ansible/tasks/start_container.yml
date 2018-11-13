@@ -1,9 +1,17 @@
-- name: Start the container
+- name: "Start the container for {{ deploy_env }}"
   become: True
   docker_container:
-    name: "{{ build_env }}"
-    image: "erchiragjain92/node-test-app:{{ build_env }}"
+    name: "{{ deploy_env }}"
+    image: "erchiragjain92/node-test-app:{{ deploy_env }}"
+    ports:
+      - 5000:5000
+    state: started
+    when: "{{ deploy_env }}" == "latest"
+  docker_container:
+    name: "{{ deploy_env }}"
+    image: "erchiragjain92/node-test-app:{{ deploy_env }}"
     ports:
       - 5001:5000
     state: started
+    when: "{{ deploy_env }}" == "beta"
   ignore_errors: True

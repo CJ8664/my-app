@@ -1,5 +1,5 @@
-- name: Pull lastest docker image
+- name: "Pull docker image for {{ deploy_env }}"
   become: True
   docker_image:
     name: erchiragjain92/node-test-app
-    tag: "{{ build_env }}"
+    tag: "{{ deploy_env }}"
