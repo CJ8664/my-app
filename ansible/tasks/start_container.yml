@@ -1,7 +1,7 @@
 - name: Start the container
   become: True
   docker_container:
-    name: {{ build_env }}
+    name: "{{ build_env }}"
     image: "erchiragjain92/node-test-app:{{ build_env }}"
     ports:
       - 5001:5000
