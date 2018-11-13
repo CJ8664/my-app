@@ -1,9 +1,9 @@
 - name: Start the container
   become: True
   docker_container:
-    name: blue
-    image: erchiragjain92/node-test-app:latest
+    name: {{ build_env }}
+    image: "erchiragjain92/node-test-app:{{ build_env }}"
     ports:
-      - 5000:5000
+      - 5001:5000
     state: started
   ignore_errors: True
