@@ -3,6 +3,7 @@
   docker_image:
     name: erchiragjain92/node-test-app
     tag: stable
+    force: true
   when: deploy_env == "stable"
 
 - name: "Pull docker image for Beta"
@@ -10,4 +11,5 @@
   docker_image:
     name: erchiragjain92/node-test-app
     tag: beta
+    force: true
   when: deploy_env == "beta"
