@@ -1,0 +1,6 @@
+- name: Start the container
+  become: True
+  docker_container:
+    name: blue
+    state: stopped
+  ignore_errors: True
