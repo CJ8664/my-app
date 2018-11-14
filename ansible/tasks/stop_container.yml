@@ -3,7 +3,7 @@
   docker_container:
     name: latest
     state: stopped
-  when: deploy_env == "latest"
+  when: deploy_env == "stable"
   ignore_errors: True
 
 - name: "Stop the container for Beta"

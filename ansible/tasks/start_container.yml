@@ -6,7 +6,7 @@
     ports:
       - 5000:5000
     state: started
-  when: deploy_env == "latest"
+  when: deploy_env == "stable"
   ignore_errors: True
 
 - name: "Start the container for Beta"
