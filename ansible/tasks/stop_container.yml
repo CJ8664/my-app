@@ -1,15 +1,15 @@
 - name: "Stop the container for Production"
   become: True
   docker_container:
-    name: latest
+    name: test_stable
     state: stopped
-  when: deploy_env == "latest"
+  when: deploy_env == "stable"
   ignore_errors: True
 
 - name: "Stop the container for Beta"
   become: True
   docker_container:
-    name: beta
+    name: test_beta
     state: stopped
   when: deploy_env == "beta"
   ignore_errors: True
