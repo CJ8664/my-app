@@ -2,7 +2,7 @@
   become: True
   docker_container:
     name: test_stable
-    image: "erchiragjain92/node-test-app:latest"
+    image: "erchiragjain92/node-test-app:stable"
     ports:
       - 6000:3000
     state: started
