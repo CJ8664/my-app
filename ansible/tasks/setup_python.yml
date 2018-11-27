@@ -7,8 +7,3 @@
   become: True
   pip:
      name: docker
-
-- name: Install Ansible.
-  become: True
-  pip:
-     name: ansible
