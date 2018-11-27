@@ -1,0 +1,46 @@
+- name: Install dependencies
+  become: true
+  apt:
+    name: software-properties-common
+
+- name: Add python apt_repository
+  become: true
+  apt_repository:
+    repo: ppa:jonathonf/python-2.7
+    state: present
+
+- name: Update apt packages
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+
+- name: Install Python 2.7
+  become: true
+  apt:
+    name: python2.7
+
+- name: OS dependencies for superset
+  become: true
+  apt:
+    name: "{{ item }}"
+  loop:
+    - build-essential
+    - libssl-dev
+    # - libffi-dev
+    - python-dev
+    - python2.7-dev
+    - python-pip
+    - python3-pip
+    - libsasl2-dev
+    - libldap2-dev
+
+- name: Download file for pip2.7
+  become: true
+  get_url:
+    url: https://bootstrap.pypa.io/get-pip.py
+    dest: "/tmp"
+
+- name: Compile pip2.7
+  become: true
+  shell: python2.7 /tmp/get-pip.py
